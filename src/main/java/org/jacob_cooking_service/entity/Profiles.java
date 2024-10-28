@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Profiles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer profile_id;
+    private Integer id;
 
     private String name;
     private String relation;
@@ -21,6 +21,10 @@ public class Profiles {
 
     public String getRelation() {
         return relation;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {

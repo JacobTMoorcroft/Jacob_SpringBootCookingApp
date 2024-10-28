@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Ingredients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ingredient_id;
+    private Integer id;
 
     private String ingredient_name;
 
@@ -20,6 +20,10 @@ public class Ingredients {
 
     public String getIngredient_name() {
         return ingredient_name;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setIngredient_name(String ingredient_name) {

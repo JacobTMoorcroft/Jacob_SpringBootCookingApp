@@ -9,16 +9,16 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "day_id", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "day_id", referencedColumnName = "id")
     private Days days;
 
-    @ManyToOne
-    @JoinColumn(name = "profile_id", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
     private Profiles profiles;
 
-    @ManyToOne
-    @JoinColumn(name = "dish", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "dish_id", referencedColumnName = "id")
     private Dishes dishes;
 
     public Schedule() {}

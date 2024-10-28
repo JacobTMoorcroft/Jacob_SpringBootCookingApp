@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Days {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer day_id;
+    private Integer id;
 
     private String day_name;
 
@@ -15,6 +15,10 @@ public class Days {
 
     public Days(String day_name) {
         this.day_name = day_name;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getDay_name() {

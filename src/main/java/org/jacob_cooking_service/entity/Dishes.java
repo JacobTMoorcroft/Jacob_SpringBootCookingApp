@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Dishes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer dish_id;
+    private Integer id;
 
     private String dish_name;
 
@@ -20,6 +20,11 @@ public class Dishes {
     public String getDish_name() {
         return dish_name;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
 
     public void setDish_name(String dish_name) {
         this.dish_name = dish_name;
