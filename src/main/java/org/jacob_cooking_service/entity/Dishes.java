@@ -25,6 +25,9 @@ public class Dishes {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public void setDish_name(String dish_name) {
         this.dish_name = dish_name;

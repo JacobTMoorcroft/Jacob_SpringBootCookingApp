@@ -17,6 +17,10 @@ public class Days {
         this.day_name = day_name;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

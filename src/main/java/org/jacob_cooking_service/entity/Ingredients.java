@@ -22,6 +22,10 @@ public class Ingredients {
         return ingredient_name;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
