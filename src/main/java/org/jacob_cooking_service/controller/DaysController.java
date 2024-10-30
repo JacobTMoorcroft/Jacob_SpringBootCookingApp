@@ -18,30 +18,30 @@ public class DaysController {
     private DaysService daysService;
 
     @GetMapping
-    public List<Days> getAllIngredients(){
+    public List<Days> getAllDays(){
         return daysService.getAllDays();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Days> getIngredients(@PathVariable Integer id){
+    public ResponseEntity<Days> getDays(@PathVariable Integer id){
         Days days = daysService.getDaysById(id);
         return new ResponseEntity<>(days, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Days> saveIngredients(@RequestBody Days days){
+    public ResponseEntity<Days> saveDays(@RequestBody Days days){
         Days savedDays = daysService.saveDays(days);
         return new ResponseEntity<>(savedDays, HttpStatus.OK);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Days> updateIngredients(@PathVariable Integer id, @RequestBody Days days){
+    public ResponseEntity<Days> updateDays(@PathVariable Integer id, @RequestBody Days days){
         Days saveDays = daysService.updateDays(id, days);
         return new ResponseEntity<>(saveDays, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Days> deleteIngredients(@PathVariable Integer id) {
+    public ResponseEntity<Days> deleteDays(@PathVariable Integer id) {
         Days days = daysService.getDaysById(id);
         daysService.deleteDays(id);
         return new ResponseEntity<>(days, HttpStatus.OK);
