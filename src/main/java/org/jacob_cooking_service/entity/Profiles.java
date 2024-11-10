@@ -9,13 +9,13 @@ public class Profiles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    private String profile_name;
     private String relation;
 
     public Profiles() {}
 
-    public Profiles(String name, String relation) {
-        this.name = name;
+    public Profiles(String profile_name, String relation) {
+        this.profile_name = profile_name;
         this.relation = relation;
     }
 
@@ -31,15 +31,15 @@ public class Profiles {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProfile_name() {
+        return profile_name;
     }
 
     public void setRelation(String relation) {
         this.relation = relation;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProfile_name(String name) {
+        this.profile_name = name;
     }
 }

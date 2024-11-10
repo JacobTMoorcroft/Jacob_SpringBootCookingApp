@@ -17,25 +17,19 @@ public class ScheduleController {
     private ScheduleService scheduleService;
 
     @GetMapping
-    public ResponseEntity<List<Schedule>> getAllSchedule() {
+    public ResponseEntity<List<Schedule>> getAllSchedules() {
         return new ResponseEntity<>(scheduleService.getAllSchedule(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Schedule> createSchedule(@RequestBody Schedule schedule) {
-        Schedule savedSchedule = scheduleService.createSchedule(schedule);
-        return new ResponseEntity<>(savedSchedule, HttpStatus.OK);
-    }
-
-    @PatchMapping("/{id}")
-    public ResponseEntity<Schedule> updateSchedule(@RequestBody Schedule schedule, @PathVariable Integer id){
-        Schedule updateSchedule = scheduleService.alterSchedule(id, schedule);
+    @PatchMapping("/{day}")
+    public ResponseEntity<Schedule> updateSchedule(@RequestBody Schedule schedule, @PathVariable String day){
+        Schedule updateSchedule = scheduleService.updateSchedule(day, schedule);
         return new ResponseEntity<>(updateSchedule, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Schedule> deleteSchedule(@PathVariable Integer id){
-        return new ResponseEntity<>(scheduleService.deleteSchedule(id), HttpStatus.OK);
+    @DeleteMapping("/{day}")
+    public ResponseEntity<Schedule> deleteSchedule(@PathVariable String day){
+        return new ResponseEntity<>(scheduleService.deleteSchedule(day), HttpStatus.OK);
     }
 
 }

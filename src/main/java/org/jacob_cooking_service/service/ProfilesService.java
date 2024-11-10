@@ -5,7 +5,6 @@ import org.jacob_cooking_service.repositories.ProfilesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProfilesService {
@@ -27,11 +26,16 @@ public class ProfilesService {
 
     public Profiles updateProfiles(Integer id, Profiles profiles){
         Profiles existingProfiles = profilesRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found"));
-        existingProfiles.setRelation(profiles.getRelation());
-        existingProfiles.setName(profiles.getName());
-        profilesRepository.save(existingProfiles);
 
-        return profilesRepository.save(profiles);
+        if (profiles.getProfile_name() != null){
+            existingProfiles.setProfile_name(profiles.getProfile_name());
+        }
+
+        if (profiles.getRelation() != null){
+            existingProfiles.setRelation(profiles.getRelation());
+        }
+
+        return profilesRepository.save(existingProfiles);
     }
 
     public void deleteProfiles(Integer id){

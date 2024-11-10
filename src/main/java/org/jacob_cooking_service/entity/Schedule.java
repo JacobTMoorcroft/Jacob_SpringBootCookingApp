@@ -6,31 +6,45 @@ import jakarta.persistence.*;
 @Table(name = "Schedule")
 public class Schedule {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String day;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "day_id", referencedColumnName = "id")
-    private Days days;
+    private int day_id;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
     @JoinColumn(name = "profile_id", referencedColumnName = "id")
     private Profiles profiles;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
     @JoinColumn(name = "dish_id", referencedColumnName = "id")
     private Dishes dishes;
 
-    public Schedule() {}
+    public Schedule() {
+    }
 
-    public Schedule(Days days, Profiles profiles, Dishes dishes) {
-        this.days = days;
+    public Schedule(String day, Profiles profiles, Dishes dishes) {
+        this.day = day;
         this.profiles = profiles;
         this.dishes = dishes;
     }
 
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
     public Dishes getDishes() {
         return dishes;
+    }
+
+    public int getDay_id() {
+        return day_id;
+    }
+
+    public void setDay_id(int day_id) {
+        this.day_id = day_id;
     }
 
     public void setDishes(Dishes dishes) {
@@ -45,12 +59,4 @@ public class Schedule {
         this.profiles = profiles;
     }
 
-    public Days getDays() {
-        return days;
-    }
-
-    public void setDays(Days days) {
-        this.days = days;
-    }
 }
-
