@@ -23,10 +23,9 @@ public class WeeklyScraper {
     @Autowired
     private DishesService dishesService;
 
-    @Scheduled(cron = "0 0 13 * * WED")
+    @Scheduled(cron = "0 15 20 * * TUE")
     public void scrape() {
         String url = "https://www.hellofresh.co.uk/menus";
-        Dishes dishes = new Dishes();
 
         try {
             // Fetch the HTML content of the page
@@ -38,8 +37,12 @@ public class WeeklyScraper {
             Elements recipeCards = doc.select("div[data-test-id=recipe-card-component].web-26xi0f");
             String dishName;
             String cookingTime;
-            for (Element recipeCard : recipeCards) {
+            String imgUrl;
 
+            for (Element recipeCard : recipeCards) {
+                Dishes dishes = new Dishes();
+                Element imgElement = recipeCard.selectFirst("img");
+                imgUrl = imgElement != null ? imgElement.attr("src") : "";
 
                 if (recipeCard.selectFirst(".web-1urjace") != null) {
                     dishName = recipeCard.selectFirst(".web-1urjace").text();
@@ -61,6 +64,7 @@ public class WeeklyScraper {
                 // Print the extracted information
                 System.out.println("Dish: " + dishName);
                 System.out.println("Cooking Time: " + cookingTime);
+                System.out.println("Image URL: " + imgUrl);
                 System.out.println("---------------");
             }
         } catch (IOException e) {
