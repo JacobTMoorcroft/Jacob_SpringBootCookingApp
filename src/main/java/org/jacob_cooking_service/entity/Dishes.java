@@ -10,11 +10,23 @@ public class Dishes {
     private Integer id;
 
     private String dish_name;
+    private String dishTime;
+    private String imgURL;
 
     public Dishes(){}
 
-    public Dishes(String dish_name) {
+    public Dishes(String dish_name, String dishTime, String imgURL) {
         this.dish_name = dish_name;
+        this.dishTime = dishTime;
+        this.imgURL = imgURL;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 
     public String getDish_name() {
@@ -32,4 +44,13 @@ public class Dishes {
     public void setDish_name(String dish_name) {
         this.dish_name = dish_name;
     }
+
+    public String getDishTime() {
+        return dishTime;
+    }
+
+    public void setDishTime(String dishTime) {
+        this.dishTime = dishTime;
+    }
 }
+
