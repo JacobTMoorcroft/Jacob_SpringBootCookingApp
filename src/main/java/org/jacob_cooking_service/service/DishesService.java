@@ -15,7 +15,6 @@ public class DishesService {
     public List<Dishes> getAllDishes() {
         return dishesRepository.findAll();
     }
-    // Optional<> returns a single object which may be empty allowing for additional methods later
     public Dishes getDishesById(Integer id){
         return dishesRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found"));
     }

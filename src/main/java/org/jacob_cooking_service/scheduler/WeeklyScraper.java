@@ -23,7 +23,7 @@ public class WeeklyScraper {
     @Autowired
     private DishesService dishesService;
 
-    @Scheduled(cron = "0 15 20 * * TUE")
+    @Scheduled(cron = "0 29 4 * * WED")
     public void scrape() {
         String url = "https://www.hellofresh.co.uk/menus";
 
