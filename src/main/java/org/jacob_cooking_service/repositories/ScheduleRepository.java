@@ -16,4 +16,7 @@ public interface ScheduleRepository extends JpaRepository<Schedule, String> {
     @Query("UPDATE Schedule s SET s.profiles = NULL, s.dishes = NULL")
     void clearSchedule();
 
+
 }
+
+

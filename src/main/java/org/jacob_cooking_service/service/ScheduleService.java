@@ -2,12 +2,15 @@ package org.jacob_cooking_service.service;
 
 
 
+import org.jacob_cooking_service.entity.History;
 import org.jacob_cooking_service.entity.Schedule;
 import org.jacob_cooking_service.repositories.DishesRepository;
 import org.jacob_cooking_service.repositories.ProfilesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.jacob_cooking_service.repositories.ScheduleRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -46,5 +49,10 @@ public class ScheduleService {
         scheduleRepository.deleteById(day);
         return saveSchedule;
     }
+
+    public void clearSchedule(){
+        scheduleRepository.clearSchedule();
+    }
+
 
 }

@@ -16,34 +16,35 @@ public class History {
 
     @ManyToOne
     @JoinColumn(name = "profile_id", referencedColumnName = "id")
-    private Profiles profile;
-    private int Date;
+    private Profiles profiles;
+
+    private String Date;
 
     public History (){
 
     }
 
-    public History(Integer id, Dishes dishes, Profiles profile, int date) {
+    public History(Integer id, Dishes dishes, Profiles profile, String date) {
         this.id = id;
         this.dishes = dishes;
-        this.profile = profile;
+        this.profiles = profile;
         Date = date;
     }
 
-    public int getDate() {
+    public String getDate() {
         return Date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         Date = date;
     }
 
-    public Profiles getProfile() {
-        return profile;
+    public Profiles getProfiles() {
+        return profiles;
     }
 
-    public void setProfile(Profiles profile) {
-        this.profile = profile;
+    public void setProfiles(Profiles profiles) {
+        this.profiles = profiles;
     }
 
     public Dishes getDishes() {

@@ -1,1 +1,4 @@
-Update the properties file to your PostreSQL server name and password
+
+## Spring Boot App
+
+Backend spring boot project to interact with a postgresql database and a reactJS frontend.
