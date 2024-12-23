@@ -10,18 +10,14 @@ public class Profiles {
     private Integer id;
 
     private String profile_name;
-    private String relation;
 
     public Profiles() {}
 
-    public Profiles(String profile_name, String relation) {
+    public Profiles(String profile_name) {
         this.profile_name = profile_name;
-        this.relation = relation;
+
     }
 
-    public String getRelation() {
-        return relation;
-    }
 
     public Integer getId() {
         return id;
@@ -35,9 +31,7 @@ public class Profiles {
         return profile_name;
     }
 
-    public void setRelation(String relation) {
-        this.relation = relation;
-    }
+
 
     public void setProfile_name(String name) {
         this.profile_name = name;

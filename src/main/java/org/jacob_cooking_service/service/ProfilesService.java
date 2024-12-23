@@ -31,10 +31,6 @@ public class ProfilesService {
             existingProfiles.setProfile_name(profiles.getProfile_name());
         }
 
-        if (profiles.getRelation() != null){
-            existingProfiles.setRelation(profiles.getRelation());
-        }
-
         return profilesRepository.save(existingProfiles);
     }
 

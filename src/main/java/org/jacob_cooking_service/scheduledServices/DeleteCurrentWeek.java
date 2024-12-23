@@ -1,4 +1,4 @@
-package org.jacob_cooking_service.scheduler;
+package org.jacob_cooking_service.scheduledServices;
 
 
 import org.jacob_cooking_service.service.ScheduleService;

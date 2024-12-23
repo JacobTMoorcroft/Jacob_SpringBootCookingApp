@@ -1,19 +1,16 @@
-package org.jacob_cooking_service.scheduler;
+package org.jacob_cooking_service.scheduledServices;
 
 import org.jacob_cooking_service.service.DishesService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.util.ArrayList;
 import org.jacob_cooking_service.entity.Dishes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.List;
-
 
 
 @Component

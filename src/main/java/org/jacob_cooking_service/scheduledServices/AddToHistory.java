@@ -1,8 +1,7 @@
-package org.jacob_cooking_service.scheduler;
+package org.jacob_cooking_service.scheduledServices;
 
 
 import org.jacob_cooking_service.service.HistoryService;
-import org.jacob_cooking_service.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
