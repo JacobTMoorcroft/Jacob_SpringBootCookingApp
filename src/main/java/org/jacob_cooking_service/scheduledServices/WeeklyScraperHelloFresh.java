@@ -14,23 +14,23 @@ import java.io.IOException;
 
 
 @Component
-public class WeeklyScraper {
+public class WeeklyScraperHelloFresh {
 
 
     @Autowired
     private DishesService dishesService;
 
-    @Scheduled(cron = "0 29 4 * * WED")
+    @Scheduled(cron = "0 52 21 * * MON")
     public void scrape() {
         String url = "https://www.hellofresh.co.uk/menus";
 
         try {
-            // Fetch the HTML content of the page
+
             Document doc = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
                     .get();
 
-            // Select all recipe-card components
+
             Elements recipeCards = doc.select("div[data-test-id=recipe-card-component].web-26xi0f");
             String dishName;
             String cookingTime;
@@ -58,7 +58,7 @@ public class WeeklyScraper {
                 dishesService.saveDishes(dishes);
 
 
-                // Print the extracted information
+
                 System.out.println("Dish: " + dishName);
                 System.out.println("Cooking Time: " + cookingTime);
                 System.out.println("Image URL: " + imgUrl);
